@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/aafriya/go-playground/utils"
+	"github.com/aaffriya/go-playground/utils"
 )
 
 var balance = 0

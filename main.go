@@ -3,13 +3,13 @@ package main
 import (
 	. "fmt"
 	// "time"
-	"github.com/aafriya/go-playground/utils"
-	// "github.com/aafriya/go-playground/utils/myutils"
-	// "github.com/aafriya/go-playground/utils/myutils/error"
-	// "github.com/aafriya/go-playground/channel"
-	// _defer "github.com/aafriya/go-playground/defer"
-	mutex "github.com/aafriya/go-playground/mutex"
-	// _ "github.com/aafriya/go-playground/mutex"
+	"github.com/aaffriya/go-playground/utils"
+	// "github.com/aaffriya/go-playground/utils/myutils"
+	// "github.com/aaffriya/go-playground/utils/myutils/error"
+	// "github.com/aaffriya/go-playground/channel"
+	// _defer "github.com/aaffriya/go-playground/defer"
+	mutex "github.com/aaffriya/go-playground/mutex"
+	// _ "github.com/aaffriya/go-playground/mutex"
 	"github.com/google/uuid"
 )
 
