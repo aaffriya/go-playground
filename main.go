@@ -3,21 +3,28 @@ package main
 import (
 	. "fmt"
 	// "time"
-	"github.com/aaffriya/go-playground/utils"
+	// "github.com/aaffriya/go-playground/utils"
 	// "github.com/aaffriya/go-playground/utils/myutils"
 	// "github.com/aaffriya/go-playground/utils/myutils/error"
 	// "github.com/aaffriya/go-playground/channel"
 	// _defer "github.com/aaffriya/go-playground/defer"
-	mutex "github.com/aaffriya/go-playground/mutex"
+
+	// . "github.com/aaffriya/go-playground/interface"
+	// mutex "github.com/aaffriya/go-playground/mutex"
 	// _ "github.com/aaffriya/go-playground/mutex"
-	"github.com/google/uuid"
+	// "github.com/google/uuid"
+	// "runtime"
+	// . "github.com/aaffriya/go-playground/struct"
+
+	. "github.com/aaffriya/go-playground/generic"
+
 )
 
 func main() {
 	Println("Program started")
 
-	id := uuid.New()
-	Println("Generated UUID:", id)
+	// id := uuid.New()go mod
+	// Println("Generated UUID:", id)
 	// chann := make(chan int, 1)
 	// fmt.Println(<-chann)
 
@@ -60,8 +67,18 @@ func main() {
 	// time.Sleep(time.Second * 2)
 
 	// _defer.TestDefer()
-	mutex.Mutex()
+	// mutex.Mutex()
+	// Println("Goroutines:", runtime.NumGoroutine())
 
-	utils.FromA()
-	utils.FromB()
+	// utils.FromA()
+	// utils.FromB()
+
+	// utils.Suspend()
+	// StructExample()
+	// InterfaceExample()
+	// PaymentExample()
+	// StructExample()
+
+	// StringQueue()
+	IntQueue()
 }

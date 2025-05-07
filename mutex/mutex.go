@@ -3,38 +3,43 @@ package mutex
 import (
 	"fmt"
 	"sync"
-
-	"github.com/aaffriya/go-playground/utils"
 )
 
-var balance = 0
+var Balance uint16
 
-func deposit(amount int, wg *sync.WaitGroup) {
-	balance += amount
+func depositWithoutMutex(amount *uint16, wg *sync.WaitGroup) {
+	*amount += 1
+	wg.Done()
+}
+
+func depositWithMutex(amount *uint16, mu *sync.Mutex, wg *sync.WaitGroup) {
+	mu.Lock()
+	*amount += 1
+	mu.Unlock()
 	wg.Done()
 }
 
 func Mutex() {
 	var wg sync.WaitGroup
 
+	// Without mutex
 	for range 1000 {
 		wg.Add(1)
-		go deposit(1, &wg) // deposit $1
+		go depositWithoutMutex(&Balance, &wg)
 	}
+	wg.Wait() // ⏳ Wait for all goroutines
+	fmt.Println("Final Balance without mutex is:", Balance)
 
-	wg.Wait()
-	fmt.Println("Final Balance:", balance)
-}
+	// Reset for next round
+	Balance = 0
+	var mu sync.Mutex
+	wg = sync.WaitGroup{} // Reset WaitGroup
 
-func Test() {
-	utils.FromA()
-	utils.FromB()
-}
-
-func init() {
-	fmt.Println("Mutex package initialized")
-}
-
-func init() {
-	fmt.Println("Mutex package initialized again")
+	// With mutex
+	for range 1000 {
+		wg.Add(1)
+		go depositWithMutex(&Balance, &mu, &wg)
+	}
+	wg.Wait() // ⏳ Wait here too!
+	fmt.Println("Final Balance with mutex is:", Balance)
 }

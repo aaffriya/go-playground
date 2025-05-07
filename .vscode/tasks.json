@@ -8,9 +8,9 @@
 				"go",
 				"build",
 				"-o",
-				"${workspaceFolder}/bin/main",
+				"${workspaceFolder}/bin/go-playground",
 				"&&",
-				"${workspaceFolder}/bin/main"
+				"${workspaceFolder}/bin/go-playground"
 
 			],
 			"problemMatcher": [
