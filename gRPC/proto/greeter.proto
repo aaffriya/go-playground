@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package greeter;
+
+option go_package = "./gRPC/proto;greeter";  // specify the Go package path
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+message HelloRequest {
+  string name = 1;
+  string age = 2; // Added age field
+  string address = 3; // Added address field
+}
+
+message HelloReply {
+  string message = 1;
+  string age = 2; // Added age field
+  string address = 3; // Added address field
+}
